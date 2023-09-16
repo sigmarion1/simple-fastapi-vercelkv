@@ -1,12 +1,12 @@
-import os
+# import os
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from fastapi.responses import FileResponse, JSONResponse
 
-from kv import KV
+# from kv import KV
 
-# app = FastAPI()
+app = FastAPI()
 # kv = KV()
 
 
