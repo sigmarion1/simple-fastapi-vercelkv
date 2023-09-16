@@ -4,6 +4,8 @@ Simple FastAPI with VercelKV Storage is a boilerplate for create fast api backen
 
 ## Installation
 
+### Local Test
+
 To Connect your vercel KV Storage, need to set endpoint and api key variables on .env file
 
 ```bash
@@ -11,7 +13,17 @@ cp .env.sample .env
 vim .env
 ```
 
-For Security reasons, recommend to use [Github Variables](https://docs.github.com/en/actions/learn-github-actions/variables)
+### Vercel Depoly
+
+![Configure Project](image.png)
+
+1. Clone this repository and push.
+
+2. In Vercel, Create -> Project -> select cloned repository
+
+3. Input the Environment Variables. If you write env files above, just copy and paste.
+
+4. Deploy!
 
 ## Usage
 
