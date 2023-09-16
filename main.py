@@ -10,6 +10,11 @@ app = FastAPI()
 # kv = KV()
 
 
+@app.get("/")
+async def hello_world():
+    return {"message": "Hello World"}
+
+
 # class Post(BaseModel):
 #     title: str = Field(title="The title of post")
 #     content: str = Field(title="The content of post")
@@ -48,8 +53,3 @@ app = FastAPI()
 # @app.get("/{current_path}")
 # def path(current_path):
 #     return {"path": current_path}
-
-
-@app.get("/api/python")
-def hello_world():
-    return {"message": "Hello World"}
