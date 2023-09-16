@@ -1,4 +1,4 @@
-# import os
+import os
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
@@ -10,15 +10,15 @@ app = FastAPI()
 kv = KV()
 
 
-@app.get("/")
-async def hello_world():
-    return {"message": "Hello World"}
-
-
 class Post(BaseModel):
     title: str = Field(title="The title of post")
     content: str = Field(title="The content of post")
     writer: str = Field(title="The writer of post")
+
+
+@app.get("/")
+async def hello_world():
+    return {"message": "Hello World"}
 
 
 @app.get("/health")
@@ -34,8 +34,6 @@ async def static_file_response(file_path: str):
 
 @app.post("/posts/{post_id}")
 async def write_post(post: Post, post_id: str):
-    print(post)
-
     result = kv.set(f"post:{post_id}", dict(post))
     return JSONResponse(result)
 
